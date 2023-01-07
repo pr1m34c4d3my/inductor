@@ -3,7 +3,7 @@ import express, { Application, Express, Request, Response } from "express";
 
 const server: Application = express();
 const { PORT, VERSION } = process.env;
-let post = require("./routes/post");
+let contoh = require("./routes/contoh");
 
 server.use(express.json());
 server.use((req, res, next) => {
@@ -14,7 +14,7 @@ server.use((req, res, next) => {
 server.get("/", (req: Request, res: Response) => {
   res.send("Ini REST API saya");
 });
-server.use(`${VERSION} + /post`, post);
+server.use(`${VERSION} + /post`, contoh);
 
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
